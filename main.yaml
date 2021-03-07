@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+  user: "{{ user }}"
+  vars_files:
+    - vars/vars.yml
+  gather_facts: no
