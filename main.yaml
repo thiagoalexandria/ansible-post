@@ -4,3 +4,5 @@
   vars_files:
     - vars/vars.yml
   gather_facts: no
+  roles:
+  - { role: Install, tags: ["install-basics"]  }
