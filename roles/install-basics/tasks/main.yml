@@ -1,2 +1,27 @@
 ---
 # tasks file for install-basics
+
+- name: install vim
+  yum:
+    name: vim
+    state: latest
+
+- name: install screen
+  yum:
+    name: screen
+    state: latest
+
+- name: install epel
+  yum:
+    name: epel-release
+    state: latest
+
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: install htop
+  yum:
+    name: htop
+    state: latest
