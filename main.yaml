@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: app1
   become: yes
   user: "{{ user }}"
   vars_files:
@@ -6,3 +6,13 @@
   gather_facts: no
   roles:
   - { role: Install, tags: ["install-basics"]  }
+
+- hosts: app2
+  become: yes
+  user: "{{ user }}"
+  vars_files:
+    - vars/vars.yml
+  gather_facts: no
+  roles:
+  - { role: Install, tags: ["install-basics"]  }
+  - { role: Import, tags: ["import-files"] }
